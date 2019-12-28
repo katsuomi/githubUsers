@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { Helmet } from "react-helmet";
-import {　Redirect, Route, Switch } from "react-router";
+import pages from "./pages";
+import { Redirect, Route, Switch } from "react-router";
 import styled from "styled-components";
-import Home from "./containers/Home";
+import Home from "./components/Home";
+import Users from "./components/users/Users";
 
 const title = "Search GitHub Users App";
 
@@ -24,11 +26,12 @@ const App: FC = () => (
       <title>{title}</title>
     </Helmet>
 
-    <HeaderWrapper>
+    {/* <HeaderWrapper>
       <Header>{title}</Header>
-    </HeaderWrapper>
+    </HeaderWrapper> */}
     <Switch>
       <Route path="/" component={Home} exact />
+      <Route path={pages.users.index.path} component={Users} />
       <Redirect to="/" />
     </Switch>
   </>
