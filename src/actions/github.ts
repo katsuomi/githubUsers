@@ -4,7 +4,7 @@ import * as Model from "../services/github/models";
 import * as ActionType from "./githubConstants";
 
 export interface GetUsersParams {
-  companyName: string;
+  q: string;
 }
 interface GetUsersResult {
   users: Model.User[];
