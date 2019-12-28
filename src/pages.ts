@@ -1,7 +1,7 @@
 const pages = {
   index: {
     path: "/",
-    title: "Search GitHub User App"
+    title: "Search GitHub Users App"
   }
 };
 
