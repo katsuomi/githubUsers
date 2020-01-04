@@ -1,71 +1,44 @@
-import React, { FC, FormEvent, SyntheticEvent, useState } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { getUsers } from "../../actions/github";
-import { GithubState } from "../../reducers/github";
-import Form, { FormProps, FormValues } from "../../components/users/Form";
-
-interface StateProps {
-  isLoading: boolean;
-}
+import Form from "../../components/users/Form";
 
 interface DispatchProps {
-  getUsersStart: (params: FormValues) => void;
+  getUsersStart: (payload: object) => void;
 }
-
-type EnhancedSearchProps = FormProps & StateProps & DispatchProps;
-
-const mapStateToProps = (state: GithubState): StateProps => ({
-  isLoading: state.isLoading
-});
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps =>
   bindActionCreators(
     {
-      getUsersStart: params => getUsers.start(params)
+      getUsersStart: payload => getUsers.start(payload)
     },
     dispatch
   );
 
-const SearchContainer: FC<EnhancedSearchProps> = ({
-  isLoading,
-  getUsersStart
-}) => {
-  const [values, setValues] = useState<FormValues>({
-    q: ""
-  });
-
-  const handleChange = (
-    targetName: string,
-    newValue: string,
-    event?: SyntheticEvent
-  ) => {
+const SearchContainer: FC<DispatchProps> = ({ getUsersStart }) => {
+  const [userName, setUserName] = useState<string>("");
+  const handleChange = (event: FormEvent, userName: string) => {
     if (event) {
       event.persist();
     }
-
-    setValues(v => ({ ...v, [targetName]: newValue }));
-    const newValues = { ...values, [targetName]: newValue };
-
-    if (!!values.q.trim() && targetName === "sort") {
-      getUsersStart(newValues);
-    }
+    setUserName(userName);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    if (event) {
-      event.preventDefault();
-      getUsersStart(values);
-    }
+  const handleSubmit = () => {
+    const payload = {
+      userName: userName
+    };
+    getUsersStart(payload);
   };
+
   return (
     <Form
       handleChange={handleChange}
       handleSubmit={handleSubmit}
-      values={values}
-      isLoading={isLoading}
+      userName={userName}
     />
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(null, mapDispatchToProps)(SearchContainer);
