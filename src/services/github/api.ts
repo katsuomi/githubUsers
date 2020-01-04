@@ -30,15 +30,16 @@ const createAxiosInstance = (optionConfig?: ApiConfig) => {
 export const getUsersFactory = (optionConfig?: ApiConfig) => {
   const instance = createAxiosInstance(optionConfig);
 
-  const getUsers = async (organizationName: string) => {
+  const getUsers = async (userName: string) => {
     try {
-      const response = await instance.get(`/orgs/${organizationName}/members`);
-
+      const response = await instance.get(
+        `/search/users?q=${userName}+in:name?access_token=${process.env.REACT_APP_DEV_GITHUB_ACCESS_TOKEN}`
+      );
+      console.log("response:", response);
       if (response.status !== 200) {
         throw new Error("Server Error");
       }
-      const users: User[] = response.data;
-
+      const users: User[] = response.data.items;
       return users;
     } catch (err) {
       throw err;
