@@ -9,14 +9,14 @@ import Users from "./components/users/Users";
 const title = "Search GitHub Users App";
 
 const HeaderWrapper = styled.div`
+  text-align: center;
   background-color: #eb3434;
-  min-width: 200px;
+  min-width: 100px;
   margin: 20px 20%;
   padding: 10px 20px;
 `;
 
 const Header = styled.h1`
-  text-align: center;
   color: white;
 `;
 
@@ -26,9 +26,9 @@ const App: FC = () => (
       <title>{title}</title>
     </Helmet>
 
-    {/* <HeaderWrapper>
+    <HeaderWrapper>
       <Header>{title}</Header>
-    </HeaderWrapper> */}
+    </HeaderWrapper>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path={pages.users.index.path} component={Users} />
