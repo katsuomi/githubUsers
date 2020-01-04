@@ -4,7 +4,7 @@ import * as Model from "../services/github/models";
 import * as ActionType from "./githubConstants";
 
 export interface GetUsersParams {
-  q: string;
+  userName: string;
 }
 interface GetUsersResult {
   users: Model.User[];
@@ -15,7 +15,6 @@ export const getUsers = {
     type: ActionType.GET_USERS_START as typeof ActionType.GET_USERS_START,
     payload: params
   }),
-
   succeed: (params: GetUsersParams, result: GetUsersResult) => ({
     type: ActionType.GET_USERS_SUCCEED as typeof ActionType.GET_USERS_SUCCEED,
     payload: { params, result }
