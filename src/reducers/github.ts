@@ -16,7 +16,7 @@ export const initialState: GithubState = {
   isLoading: false
 };
 
-const githubReducer: Reducer<GithubState, GithubAction> = (
+const github: Reducer<GithubState, GithubAction> = (
   state: GithubState = initialState,
   action: GithubAction
 ): GithubState => {
@@ -24,7 +24,6 @@ const githubReducer: Reducer<GithubState, GithubAction> = (
     case ActionType.GET_USERS_START:
       return {
         ...state,
-        users: [],
         isLoading: true
       };
     case ActionType.GET_USERS_SUCCEED:
@@ -46,4 +45,4 @@ const githubReducer: Reducer<GithubState, GithubAction> = (
   }
 };
 
-export default githubReducer;
+export default github;

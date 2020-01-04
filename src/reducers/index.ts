@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import githubReducer from "./github";
+import github from "./github";
 
-export default combineReducers({ githubReducer });
+export default combineReducers({ github });
