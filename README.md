@@ -36,7 +36,4 @@ $ yarn install
 $ yarn start
 
 下記のサーバーが起動していれば、OKです。
-
-|host||
-|:-:|:-:|
-||[http://localhost:3000](http://localhost:3000)|
+http://localhost:3000
