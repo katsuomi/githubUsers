@@ -34,6 +34,7 @@ $ yarn install
 
 # start local server
 $ yarn start
+```
 
 If the following local server started, it's ok. 
 http://localhost:3000
