@@ -32,7 +32,7 @@ The following procedure, start the container.
 # package install 
 $ yarn install 
 
-# start local server
+# Run local server
 $ yarn start
 
 
