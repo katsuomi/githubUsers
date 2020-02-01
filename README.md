@@ -26,7 +26,7 @@ cd githubUsers
 
 #### 3. Start-up
 
-with the following procedure, start the container. 
+The following procedure, start the container. 
 
 ```bash
 # package install 
