@@ -17,14 +17,14 @@ You can easily find github users.
 
 ## 🔰 Install & Setup
 
-#### 2. Getting source code
+#### Getting source code
 
 ```bash
 git clone https://github.com/katsuomi/githubUsers.git
 cd githubUsers
 ```
 
-#### 3. Start-up
+#### Start-up
 
 The following procedure, start the container. 
 
