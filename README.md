@@ -10,30 +10,30 @@ You can easily find github users.
 
 ||Name|Version|What|
 |:-:|:-:|:-:|:-|
-|frontend|JavaScript||高級言語|
-||npm|6.7.0|パッケージ管理システム|
-||React.js|16.11.0|JavaScriptライブラリ|
+|frontend|JavaScript||High-level languages|
+||npm|6.7.0|Package management system|
+||React.js|16.11.0|JavaScript Library|
 ||TypeScript|7.74|AltJS|
 
 ## 🔰 Install & Setup
 
-#### 2. ソースコードの取得
+#### 2. Getting source code
 
 ```bash
 git clone https://github.com/katsuomi/githubUsers.git
 cd githubUsers
 ```
 
-#### 3. 起動
+#### 3. Start-up
 
-下記の手順で、コンテナを起動させて下さい。
+with the following procedure, start the container. 
 
 ```bash
 # package install 
 $ yarn install 
 
-# local serverの起動
+# start local server
 $ yarn start
 
-下記のサーバーが起動していれば、OKです。
+If the following local server started, it's ok. 
 http://localhost:3000
