@@ -1,7 +1,7 @@
 # githubUsers
 
 ## 💬 About
-You can easily find github users!
+You can find the users you are looking for
 
 ## 💁‍♂️ demo
 ![a](https://user-images.githubusercontent.com/36298285/71775643-52a89a00-2fc7-11ea-8129-11046b8cbb7d.gif)
